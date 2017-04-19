@@ -27,3 +27,15 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
 
 console.log(argv);
 
+// c44a40b06f6825473dc6c8c5a83f0a08
+
+
+request({
+    url:'https://api.darksky.net/forecast/c44a40b06f6825473dc6c8c5a83f0a08/42.3601,-71.0589',
+    json: true
+}, (error, response, body) => {
+    if (error) {
+        console.log('unable to connect to forcast servers');
+    }
+    console.log(body.currently.temperature);
+})
